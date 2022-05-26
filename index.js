@@ -88,10 +88,43 @@ function init() {
                 message: "What is the engineer's github username?",
             }
         ])
+        .then(function (answers) {
+            const engineer = new Engineer(answers.name, answers.id, answers.email, answers.github);
+            teamArr.push(engineer);
+            createTeam()
+        })
     }
 
+    createEngineer();
+
     function createIntern(){
-        
+        Inquirer.prompt([
+            {
+                type: 'input',
+                name: 'name',
+                message: "What is the intern's name?"
+            },
+            {
+                type: 'input',
+                name: 'id',
+                message: "What is the intern's id?"
+            },
+            {
+                type: 'input',
+                name: 'email',
+                message: "What is the intern's email?",
+            },
+            {
+                type: 'input',
+                name: 'school',
+                message: "What is the intern's school?",
+            }
+        ])
+        .then(function (answers) {
+            const intern = new Intern(answers.name, answers.id, answers.email, answers.school);
+            teamArr.push(intern);
+            createTeam()
+        })
     }
 
     function buildTeam(){
