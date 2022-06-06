@@ -6,6 +6,8 @@ const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
 
+const temp = require("./src/page-template");
+
 const teamArr = [];
 
 function init() {
@@ -95,8 +97,6 @@ function init() {
         })
     }
 
-    createEngineer();
-
     function createIntern(){
         Inquirer.prompt([
             {
@@ -128,7 +128,8 @@ function init() {
     }
 
     function buildTeam(){
-        
+        console.log(teamArr);
+        fs.writeFileSync(path.join(path.resolve(__dirname,"dist"),"Team.html"), temp(teamArr), "utf-8")
     }
 }
 

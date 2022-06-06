@@ -15,7 +15,7 @@ test('saves github of Engineer', () => {
 
 test('show what their role is', () => {
     const role = 'Engineer';
-    const emp = new Manager ('Renley, 1, "renleyrufferford@dog.com', role);
+    const emp = new Engineer ('Renley, 1, "renleyrufferford@dog.com', role);
 
     expect(emp.getRole()).toBe(role);
 });

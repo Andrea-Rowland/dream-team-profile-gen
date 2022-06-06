@@ -22,7 +22,7 @@ test('show what their role is', () => {
 
 test('gets the office number', () => {
     const officeNumber = '2';
-    const emp = new Manager('Ollie', 1, 'mrolliepants@dog.com', 'Manager', officeNumber);
+    const emp = new Manager('Ollie', 1, 'mrolliepants@dog.com', officeNumber);
 
-    expect(emp.getOfficeNumber()).toBe('2');
+    expect(emp.getOfficeNumber()).toBe(officeNumber);
 });
